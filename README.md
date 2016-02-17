@@ -1,6 +1,8 @@
 ##TODO
 
 ```
+    create database and edit config/app.yml
+
     cd $GOPATH
     
     mkdir -p src/app && cd src/app
