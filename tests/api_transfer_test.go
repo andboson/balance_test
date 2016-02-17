@@ -52,7 +52,7 @@ func TestTransfer(t *testing.T) {
 	modelFrom := model.GetById(101)
 	modelTo := model2.GetById(205)
 
-	Convey("Subject: Test Deposite \n", t, func() {
+	Convey("Subject: Test Transfer \n", t, func() {
 		Convey("Status Code Should Be 200", func() {
 			So(w.Code, ShouldEqual, 200)
 		})

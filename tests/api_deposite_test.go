@@ -16,7 +16,6 @@ import (
 	"testing"
 )
 
-
 func TestDepositeNew(t *testing.T) {
 	DeleteMockDataModel(101)
 

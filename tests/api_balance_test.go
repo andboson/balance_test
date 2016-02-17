@@ -48,7 +48,7 @@ func TestGetBalance(t *testing.T) {
 	json.Unmarshal([]byte(responseText), &response)
 	log.Printf("\n response mapped: %+v", response)
 
-	Convey("Subject: Test GetBalancey \n", t, func() {
+	Convey("Subject: Test get balance \n", t, func() {
 		Convey("Status Code Should Be 200", func() {
 			So(w.Code, ShouldEqual, 200)
 		})
