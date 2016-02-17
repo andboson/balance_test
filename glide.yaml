@@ -1,0 +1,14 @@
+package: app
+import:
+- package: github.com/julienschmidt/httprouter
+- package: github.com/lib/pq
+- package: github.com/smartystreets/goconvey
+  subpackages:
+  - convey
+- package: github.com/asaskevich/govalidator
+- package: github.com/andboson/configlog
+- package: github.com/jinzhu/gorm
+- package: gopkg.in/guregu/null.v2
+- package: github.com/fvbock/endless
+- package: github.com/Sirupsen/logrus
+- package: github.com/andboson/carbon
