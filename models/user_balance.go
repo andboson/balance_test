@@ -3,14 +3,12 @@ package models
 import (
 	. "app/common"
 	"app/services"
-	"sync"
 )
 
 type UserBalance struct {
 	Id      int        `json:"id"`
 	Name    string     `json:"name"`
 	Balance int        `json:"balance"`
-	mu      sync.Mutex `json:"-"`
 }
 
 func (m *UserBalance) GetById(id int) *UserBalance {
@@ -23,8 +21,6 @@ func (m *UserBalance) GetById(id int) *UserBalance {
 }
 
 func (m *UserBalance) AddAmount(summ int) (*UserBalance, error) {
-	m.mu.Lock()
-	defer m.mu.Unlock()
 	amount := m.Balance + summ
 	error := services.DB.Model(m).Update("balance", amount).Error
 	if error != nil {
@@ -38,8 +34,6 @@ func (m *UserBalance) AddAmount(summ int) (*UserBalance, error) {
 func (m *UserBalance) WithdrawAmount(summ int) (*UserBalance, error) {
 	var amount int
 	var error error
-	m.mu.Lock()
-	defer m.mu.Unlock()
 	if m.Balance < summ {
 		amount = m.Balance
 	} else {
